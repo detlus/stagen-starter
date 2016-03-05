@@ -1,0 +1,27 @@
+<div>{{page.body}}</div>
+<div>
+{% for item in listing.items %}
+  {{ item }}
+{% endfor %}
+</div>
+<nav>
+  {% if pagination.count %}
+  {% if pagination.current_page > 0 %}
+    <a href="{{ pagination.pages[pagination.current_page - 1] }}">Previous</a>
+  {% endif %}
+  <ul>
+  {% for page in pagination.pages %}
+    <li>
+    {% if pagination.current_page == loop.index0 %}
+      {{ loop.index }}
+    {% else %}
+      <a href="{{ page }}">{{ loop.index }}</a>
+    {% endif %}
+    </li>
+  {% endfor %}
+  </ul>
+  {% if pagination.current_page < pagination.count - 1 %}
+    <a href="{{ pagination.pages[pagination.current_page + 1] }}">Next</a>
+  {% endif %}
+  {% endif %}
+</nav>

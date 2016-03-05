@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.title | escape('html') }}</title>
+    <description>{{ site.description | escape('html') }}</description>
+    <link>{{ site.url }}{{ site.baseurl }}/</link>
+    <atom:link href="{{ site.url ~ site.baseurl ~ page.permalink }}" rel="self" type="application/rss+xml"/>
+    <pubDate>{{ page.datetime | date('YYYY') }}</pubDate>
+    <lastBuildDate>{{ page.datetime | date }}</lastBuildDate>
+    <generator>Stagen</generator>
+    {% for item in feed.items %}
+      <item>
+        <title>{{ item.title | escape }}</title>
+        <description>{{ item.excerpt | escape }}</description>
+        <pubDate>{{ item.datetime | date }}</pubDate>
+        <link>{{ site.url ~ site.baseurl ~ item.url }}</link>
+        <guid isPermaLink="true">{{ site.url ~ site.baseurl ~ item.url }}</guid>
+        {% for tag in item.tags %}
+        <category>{{ tag | escape }}</category>
+        {% endfor %}
+        {% for cat in item.categories %}
+        <category>{{ cat | escape }}</category>
+        {% endfor %}
+      </item>
+    {% endfor %}
+  </channel>
+</rss>
