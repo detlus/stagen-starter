@@ -4,24 +4,21 @@
   {{ item }}
 {% endfor %}
 </div>
-<nav>
-  {% if pagination.count %}
+{% if pagination.count %}
+<ul class="pagination" role="menubar" aria-label="Pagination">
   {% if pagination.current_page > 0 %}
-    <a href="{{ pagination.pages[pagination.current_page - 1] }}">Previous</a>
+  <li class="arrow"><a href="{{ site.baseurl ~ pagination.pages[pagination.current_page - 1] }}" aria-label="Previous page">&laquo; Previous</a></li>
   {% endif %}
-  <ul>
   {% for page in pagination.pages %}
-    <li>
     {% if pagination.current_page == loop.index0 %}
-      {{ loop.index }}
+      <li class="current"><a><span class="show-for-sr">You're on page </span>{{ loop.index }}</a></li>
     {% else %}
-      <a href="{{ page }}">{{ loop.index }}</a>
+      <li><a href="{{ site.baseurl ~  page }}" aria-label="Page {{ loop.index }}">{{ loop.index }}</a></li>
     {% endif %}
-    </li>
   {% endfor %}
-  </ul>
   {% if pagination.current_page < pagination.count - 1 %}
-    <a href="{{ pagination.pages[pagination.current_page + 1] }}">Next</a>
+  <li class="arrow"><a href="{{ site.baseurl ~ pagination.pages[pagination.current_page + 1] }}" aria-label="Next page">Next &raquo;</a></li>
   {% endif %}
-  {% endif %}
-</nav>
+</ul>
+{% endif %}
+{{ page.footer }}

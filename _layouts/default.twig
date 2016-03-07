@@ -9,9 +9,9 @@
 
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | striptags | truncate(160) }}{% else %}{{ site.description }}{% endif %}">
 
-    <link rel="stylesheet" href="{{ site.baseurl ~ "/css/app.css" }}">
+    <link rel="stylesheet" href="{{ site.baseurl ~ "css/app.css" }}">
     <link rel="canonical" href="{{ site.url ~ site.baseurl ~ page.url | replace({'index.html':''}) }}">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url ~ site.baseurl ~  "/feed.xml" }}" />
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url ~ site.baseurl ~  "feed.xml" }}" />
     {% if page.title %}{% if page.author %}<meta name="author" content="{{ page.author }}">{% else %}<meta name="author" content="Junaid">{% endif %}{% endif %}
     <meta property="og:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}">
     <meta property="og:site_name" content="{{ site.title }}">
@@ -37,7 +37,7 @@
   <header class="site-header row" role="banner">
 
     <div class="small-9 medium-4 columns">
-      <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+      <a class="site-title" href="{{ site.baseurl }}">{{ site.title }}</a>
     </div>
       <nav class="site-nav second-column small-3 medium-8 columns" role="navigation">
         <h2 class="show-for-sr">Primary Menu</h2>
@@ -54,7 +54,7 @@
               {% if item.external %}
                 {% set linkurl = item.href %}
               {% else %}
-                {% set linkurl = item.href %}
+                {% set linkurl = site.baseurl ~ item.href %}
               {% endif %}
               <li><a class="page-link" href="{{ linkurl }}">{{ item.title }}</a></li>
             {% endif %}
@@ -66,7 +66,7 @@
   </div>
 
   {% endblock %}
-  <div class="content-wrapper"><div class="row">{% block content %}{{ page.content }}{% endblock %}</div></div>
+  <div class="content-wrapper"><div class="row"><div class="small-12 column">{% block content %}{{ page.content }}{% endblock %}</div></div></div>
   {% block footer %}
   <div class="footer-wrapper">
     <footer class="site-footer row" role="contentinfo">

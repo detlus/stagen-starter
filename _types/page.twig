@@ -7,9 +7,6 @@
         {{page.title}}
       {% endif %}
     </h1>
-    <div class="page-meta">
-      <time itemprop="datePublished" datetime="{{ page.datetime | date('Y-m-dTH:i:sz')}}">{{ page.datetime | date('M d, Y') }}</time>
-    </div>
   </header>
   <div>{% if view_mode == 'teaser' %}{{page.excerpt}}{% else %}{{page.body}}{% endif %}</div>
 </article>
