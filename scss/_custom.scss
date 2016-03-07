@@ -287,10 +287,11 @@ pre {
 }
 
 .footnotes {
-  border-top: 1px solid $secondary-color;
   margin-top: $column-gutter;
-  padding-top: $column-gutter / 2;
   p, a, ol, ul, li {
     font-size: $secondary-font-size;
+  }
+  p {
+    margin-bottom: 0;
   }
 }
