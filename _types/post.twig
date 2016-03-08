@@ -12,5 +12,5 @@
       {% if post.categories %} • <span class="category">{{ post.categories }}</span>{% endif %}
     </div>
   </header>
-  <div>{% if view_mode == 'teaser' %}{{post.excerpt}}{% else %}{{post.body}}{% endif %}</div>
+  <div>{% if view_mode == 'teaser' %}{{post.excerpt}}<p class="more-link"><a href="{{ site.baseurl ~ post.permalink}}">Read more →</a></p>{% else %}{{post.body}}{% endif %}</div>
 </article>
