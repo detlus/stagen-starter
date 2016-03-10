@@ -10,15 +10,15 @@
     <generator>Stagen</generator>
     {% for item in feed.items %}
       <item>
-        <title>{{ item.title | escape }}</title>
-        <description>{{ item.excerpt | escape }}</description>
-        <pubDate>{{ item.datetime | date }}</pubDate>
-        <link>{{ site.url ~ site.baseurl ~ item.url }}</link>
-        <guid isPermaLink="true">{{ site.url ~ site.baseurl ~ item.url }}</guid>
-        {% for tag in item.tags %}
+        <title>{{ item.data.title | escape }}</title>
+        <description>{{ item.data.excerpt | escape }}</description>
+        <pubDate>{{ item.data.datetime | date }}</pubDate>
+        <link>{{ site.url ~ site.baseurl ~ item.data.url }}</link>
+        <guid isPermaLink="true">{{ site.url ~ site.baseurl ~ item.data.url }}</guid>
+        {% for tag in item.data.tags %}
         <category>{{ tag | escape }}</category>
         {% endfor %}
-        {% for cat in item.categories %}
+        {% for cat in item.data.categories %}
         <category>{{ cat | escape }}</category>
         {% endfor %}
       </item>
