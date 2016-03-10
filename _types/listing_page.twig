@@ -1,6 +1,8 @@
+{% if page.title %}
 <header>
-  <h1 class="page-title" itemprop="name">{{page.title}}</h1>
+  <h1 class="page-title">{{page.title}}</h1>
 </header>
+{% endif %}
 <div>{{page.body}}</div>
 <div>
 {% for item in listing.items %}
