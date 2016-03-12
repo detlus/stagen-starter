@@ -8,8 +8,6 @@
     <title>{% block page_title %}{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}{% endblock %}</title>
 
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | striptags | truncate(160) }}{% else %}{{ site.description }}{% endif %}">
-
-    <link rel="stylesheet" href="{{ site.baseurl ~ "css/app.css" }}">
     <link rel="canonical" href="{{ site.url ~ site.baseurl ~ page.url | replace({'index.html':''}) }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url ~ site.baseurl ~  "feed.xml" }}" />
     {% if page.title %}{% if page.author %}<meta name="author" content="{{ page.author }}">{% else %}<meta name="author" content="Junaid">{% endif %}{% endif %}
@@ -27,6 +25,7 @@
     <meta name="twitter:site" content="@{{ site.data.social_networks.twitter.site }}">
     <meta name="twitter:creator" content="@{{ site.data.social_networks.twitter.user }}">
     {% endif %}
+    {{ page.head }}
   </head>
   {% endblock %} {# head #}
 
@@ -165,5 +164,6 @@
 
   {% endblock %}
   </div>
+  {{ page.footer }}
   </body>
 </html>
