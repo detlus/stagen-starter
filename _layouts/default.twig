@@ -19,12 +19,10 @@
     {% endfor %}{% endif %}
     {% if site.data.social_networks.facebook and site.data.social_networks.facebook.admins %}<meta property="fb:admins" content="{{ site.data.social_networks.facebook.admins }}" />{% endif %}
     {% if site.data.social_networks.gplus and site.data.social_networks.gplus.url %}<link rel="publisher" href="{{ site.data.social_networks.gplus.url }}">{% endif %}
-    {% if page.date %}{# Only posts will have date property. #}
     {% if page.images %}<meta name="twitter:card" content="summary_large_image">
     {% else %}<meta name="twitter:card" content="summary">{% endif %}
-    <meta name="twitter:site" content="@{{ site.data.social_networks.twitter.site }}">
-    <meta name="twitter:creator" content="@{{ site.data.social_networks.twitter.user }}">
-    {% endif %}
+    {% if site.data.social_networks.twitter.site %}<meta name="twitter:site" content="@{{ site.data.social_networks.twitter.site }}">{% endif %}
+    {% if page.author and site.data.authors[page.author].twitter %}<meta name="twitter:creator" content="@{{ site.data.authors[page.author].twitter.username }}">{% endif %}
     {{ page.head }}
   </head>
   {% endblock %} {# head #}
