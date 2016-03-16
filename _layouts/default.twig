@@ -12,6 +12,7 @@
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url ~ site.baseurl ~  "feed.xml" }}" />
     {% if page.title %}{% if page.author %}<meta name="author" content="{{ page.author }}">{% else %}<meta name="author" content="Junaid">{% endif %}{% endif %}
     <meta property="og:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}">
+    <meta name="og:description" content="{% if page.excerpt %}{{ page.excerpt | striptags | truncate(160) }}{% else %}{{ site.description }}{% endif %}">
     <meta property="og:site_name" content="{{ site.title }}">
     {% if page.images %}{% for image in page.images %}
     <meta property="og:image" content="{{ site.url ~ site.baseurl ~ image.src }}" />
