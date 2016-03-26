@@ -14,7 +14,7 @@
     {% if view_mode == 'teaser' %}{{post.excerpt}}<p class="more-link"><a href="{{ site.baseurl ~ post.permalink}}">Read more →</a></p>
     {% else %}
       {{post.body}}
-      {% if post.comment != false and site.disqus_shortname %}{% include '../_includes/disqus-comments.twig'  with {'disqus_shortname': site.disqus_shortname} %}{% endif %}
+      {% if post.comment != false and site.disqus_shortname %}{% include '../includes/disqus-comments.twig'  with {'disqus_shortname': site.disqus_shortname} %}{% endif %}
     {% endif %}
   </div>
 </article>
