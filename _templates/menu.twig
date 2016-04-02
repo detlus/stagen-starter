@@ -1,0 +1,15 @@
+<nav>
+  <h2>{{ menu.title }}</h2>
+  <ul>
+    {% for item in menu.items %}
+      {% if item.title %}
+        {% if item.external %}
+          {% set linkurl = item.href %}
+        {% else %}
+          {% set linkurl = site.baseurl ~ item.href %}
+        {% endif %}
+        <li><a href="{{ linkurl }}">{{ item.title }}</a></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
