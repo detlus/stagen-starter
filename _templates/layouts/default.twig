@@ -8,10 +8,11 @@
     <title>{% block page_title %}{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}{% endblock %}</title>
 
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | striptags | truncate(160) }}{% else %}{{ site.description }}{% endif %}">
-    <link rel="canonical" href="{{ site.url ~ site.baseurl ~ page.url | replace({'index.html':''}) }}">
+    <link rel="canonical" href="{{ site.url ~ site.baseurl ~ page.permalink | replace({'index.html':''}) }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url ~ site.baseurl ~  "feed.xml" }}" />
     {% if page.title %}{% if page.author %}<meta name="author" content="{{ page.author }}">{% else %}<meta name="author" content="Junaid">{% endif %}{% endif %}
     <meta property="og:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}">
+    <meta name="og:description" content="{% if page.excerpt %}{{ page.excerpt | striptags | truncate(160) }}{% else %}{{ site.description }}{% endif %}">
     <meta property="og:site_name" content="{{ site.title }}">
     {% if page.images %}{% for image in page.images %}
     <meta property="og:image" content="{{ site.url ~ site.baseurl ~ image.src }}" />
@@ -19,12 +20,10 @@
     {% endfor %}{% endif %}
     {% if site.data.social_networks.facebook and site.data.social_networks.facebook.admins %}<meta property="fb:admins" content="{{ site.data.social_networks.facebook.admins }}" />{% endif %}
     {% if site.data.social_networks.gplus and site.data.social_networks.gplus.url %}<link rel="publisher" href="{{ site.data.social_networks.gplus.url }}">{% endif %}
-    {% if page.date %}{# Only posts will have date property. #}
     {% if page.images %}<meta name="twitter:card" content="summary_large_image">
     {% else %}<meta name="twitter:card" content="summary">{% endif %}
-    <meta name="twitter:site" content="@{{ site.data.social_networks.twitter.site }}">
-    <meta name="twitter:creator" content="@{{ site.data.social_networks.twitter.user }}">
-    {% endif %}
+    {% if site.data.social_networks.twitter.site %}<meta name="twitter:site" content="@{{ site.data.social_networks.twitter.site }}">{% endif %}
+    {% if page.author and site.data.authors[page.author].twitter %}<meta name="twitter:creator" content="@{{ site.data.authors[page.author].twitter.username }}">{% endif %}
     {{ page.head }}
   </head>
   {% endblock %} {# head #}
