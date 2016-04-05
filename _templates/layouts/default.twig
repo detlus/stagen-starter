@@ -38,7 +38,7 @@
     <div class="small-9 medium-4 columns">
       <a class="site-title" href="{{ site.baseurl }}">{{ site.title }}</a>
     </div>
-    {% if theme_settings.primary_menu %}{{ site.menu_manager.print(theme_settings.primary_menu) }}{% endif %}
+    {% if theme_settings.primary_menu %}{{ site.menu_manager.print(theme_settings.primary_menu, 'menu--primary') }}{% endif %}
   </header>
   </div>
 
@@ -110,7 +110,7 @@
               {% endif %}
             </ul>
           </nav>
-          {% if theme_settings.footer_menu %}{{ site.menu_manager.print(theme_settings.footer_menu) }}{% endif %}
+          {% if theme_settings.footer_menu %}{{ site.menu_manager.print(theme_settings.footer_menu, 'menu--footer') }}{% endif %}
       </div>
       <div class="small-12 medium-12 large-4 columns">
           <div class="">
