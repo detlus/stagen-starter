@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en">
+  {% set theme_settings = theme.settings() %}
   {% block head %}
   <head>
     <meta charset="utf-8">
@@ -37,7 +38,7 @@
     <div class="small-9 medium-4 columns">
       <a class="site-title" href="{{ site.baseurl }}">{{ site.title }}</a>
     </div>
-    {{ site.menu_manager.print('primary') }}
+    {% if theme_settings.primary_menu %}{{ site.menu_manager.print(theme_settings.primary_menu) }}{% endif %}
   </header>
   </div>
 
@@ -109,7 +110,7 @@
               {% endif %}
             </ul>
           </nav>
-          {{ site.menu_manager.print('footer') }}
+          {% if theme_settings.footer_menu %}{{ site.menu_manager.print(theme_settings.footer_menu) }}{% endif %}
       </div>
       <div class="small-12 medium-12 large-4 columns">
           <div class="">
