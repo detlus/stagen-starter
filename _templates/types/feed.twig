@@ -13,8 +13,8 @@
         <title>{{ item.data.title | escape }}</title>
         <description>{{ item.data.excerpt | escape }}</description>
         <pubDate>{{ item.data.datetime | date }}</pubDate>
-        <link>{{ site.url ~ site.baseurl ~ item.data.url }}</link>
-        <guid isPermaLink="true">{{ site.url ~ site.baseurl ~ item.data.url }}</guid>
+        <link>{{ site.url ~ site.baseurl ~ item.data.permalink }}</link>
+        <guid isPermaLink="true">{{ site.url ~ site.baseurl ~ item.data.permalink }}</guid>
         {% for tag in item.data.tags %}
         <category>{{ tag | escape }}</category>
         {% endfor %}
