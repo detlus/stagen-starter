@@ -96,10 +96,10 @@ hr {
   height: 16px;
   vertical-align: middle; }
   .icon > svg path {
-    fill: #484848; }
+    fill: #888888; }
 
 a:hover .icon > svg path {
-  fill: #222; }
+  fill: #a2a2a2; }
 
 .post-header {
   margin-bottom: 1.25rem; }
@@ -154,29 +154,31 @@ a:hover .icon > svg path {
   background-color: white; }
 
 .header-wrapper {
-  background-color: #f4f4f4;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjNDAzYzNmIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDBMOCA4Wk04IDBMMCA4WiIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2U9IiMxZTI5MmQiPjwvcGF0aD4KPC9zdmc+");
   border-bottom: 1px solid #e7e7e7;
   padding: 1.875rem 0;
   margin-bottom: 1.875rem; }
   .header-wrapper a {
-    color: #222; }
+    color: #c8c8c8; }
     .header-wrapper a:hover {
-      color: #555555; }
+      color: #e1e1e1; }
 
 .footer-wrapper {
   margin: 1.875rem 0;
   margin-bottom: 0;
   text-align: center;
   padding: 0.9375rem 0;
-  background-color: #e7e7e7; }
+  background-color: #1b1b1b; }
   .footer-wrapper p, .footer-wrapper a {
     font-size: 1rem; }
   .footer-wrapper h1 {
     font-size: 2.5rem; }
   .footer-wrapper h2 {
     font-size: 2.1rem; }
+  .footer-wrapper h1, .footer-wrapper h2, .footer-wrapper h3, .footer-wrapper h4, .footer-wrapper h5, .footer-wrapper h6 {
+    color: #a2a2a2; }
   .footer-wrapper p, .footer-wrapper li {
-    color: #484848; }
+    color: #888888; }
 
 .site-footer > * {
   margin-bottom: 1.25rem; }

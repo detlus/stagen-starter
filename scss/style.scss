@@ -115,7 +115,7 @@ hr {
     vertical-align: middle;
 
     path {
-      fill: $secondary-text-color;
+      fill: lighten($secondary-text-color, 25%);
     }
   }
 }
@@ -124,7 +124,7 @@ a:hover {
   .icon {
     > svg {
       path {
-        fill: $primary-text-color;
+        fill: lighten($secondary-text-color, 35%);
       }
     }
   }
@@ -207,14 +207,14 @@ a:hover {
 }
 
 .header-wrapper {
-  background-color: $secondary-background-color;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjNDAzYzNmIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDBMOCA4Wk04IDBMMCA4WiIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2U9IiMxZTI5MmQiPjwvcGF0aD4KPC9zdmc+");
   border-bottom: 1px solid $secondary-color;
   padding: $column-gutter 0;
   margin-bottom: $column-gutter;
   a {
-    color: $primary-text-color;
+    color: lighten($secondary-text-color, 50%);
     &:hover {
-      color: lighten($primary-text-color, 20%);
+      color: lighten($secondary-text-color, 60%);
     }
   }
 }
@@ -224,7 +224,7 @@ a:hover {
   margin-bottom: 0;
   text-align: center;
   padding: $column-gutter / 2 0;
-  background-color: $secondary-color;
+  background-color: darken($secondary-color, 80%);
   p, a {
     font-size: 1rem * $footer-reduction;
   }
@@ -235,8 +235,11 @@ a:hover {
   h2 {
     font-size: $h2-font-size * $footer-reduction;
   }
+  h1, h2, h3, h4, h5, h6 {
+    color: lighten($secondary-text-color, 35%);
+  }
   p, li {
-    color: $secondary-text-color;
+    color: lighten($secondary-text-color, 25%);
   }
 }
 
