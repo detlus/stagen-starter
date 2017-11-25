@@ -1,2 +1,2 @@
 exclude: [scss, node_modules, bower_components, package.json, 'README.md', 'starter.yml', 'bower.json', 'Gruntfile.js', 'humans.txt']
-libraries: [foundation]
+libraries: [starter]

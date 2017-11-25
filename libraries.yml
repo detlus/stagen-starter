@@ -1,3 +1,17 @@
 foundation:
   css:
     - url: css/app.css
+
+purecss:
+  css:
+    - url: css/pure-min.css
+
+purecss-responsive-grid:
+  css:
+    - url: css/grids-responsive-min.css
+  dependecies: [purecss]
+
+starter:
+  css:
+    - url: css/style.css
+  dependecies: [purecss-responsive-grid]
