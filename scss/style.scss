@@ -2,11 +2,11 @@
 
 $primary-font-size: 1.2rem;
 
-$h1-font-size: 2.75rem;
-$h2-font-size: 2.31rem;
-$h3-font-size: 1.69rem;
-$h4-font-size: 1.44rem;
-$h5-font-size: 1.125rem;
+$h1-font-size: 2.5rem;
+$h2-font-size: 2.1rem;
+$h3-font-size: 1.5rem;
+$h4-font-size: 1.2rem;
+$h5-font-size: 1.1rem;
 $h6-font-size: 1rem;
 
 $paragraph-font-size: 1rem;
@@ -61,7 +61,6 @@ $small-only: "only screen and (max-width: 35.5em)";
  * Generic styles.
  */
 
-
 body  {
   font-family: $body-font-family;
   font-size: 1rem;
@@ -96,6 +95,11 @@ blockquote {
 
 code {
   color: #333; // oil
+}
+
+hr {
+  border: solid #DDDDDD;
+  border-width: 1px 0 0;
 }
 
 .site-title {
@@ -147,14 +151,9 @@ a:hover {
   margin: 0;
 }
 
-article {
-  .more-link {
-
-  }
-}
-
 .content-wrapper {
   padding-top: $column-gutter / 2;
+  font-size: 1.1rem;
 }
 
 .social-media-list {
@@ -244,6 +243,13 @@ article {
 .site-footer {
   > * {
     margin-bottom: $paragraph-margin-bottom;
+  }
+  .social-media-list, .footer-menu {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
   }
 }
 
