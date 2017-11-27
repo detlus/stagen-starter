@@ -13,11 +13,13 @@ $paragraph-font-size: 1rem;
 $secondary-font-size: $paragraph-font-size * 0.9;
 $ternary-font-size: $secondary-font-size * 0.9;
 
-$font-family-serif: 'Roboto Slab', Georgia, Cambria, "Times New Roman", Times, serif;
-$font-family-sans-serif: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+// $font-family-serif: 'Roboto Slab', Georgia, Cambria, "Times New Roman", Times, serif
+$font-family-serif: Georgia, serif;
+// $font-family-sans-serif: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$font-family-sans-serif: "Varela Round", arial , sans-serif;
 
-$body-font-family: $font-family-sans-serif;
-$header-font-family: $font-family-serif;
+$body-font-family: $font-family-serif;
+$header-font-family: $font-family-sans-serif;
 
 $primary-color: #008CBA;
 
@@ -32,7 +34,7 @@ $secondary-text-color: lighten($body-font-color, 15%);
 $secondary-color: #e7e7e7;
 $secondary-background-color: lighten($secondary-color, 5%);
 
-$blockquote-font-color: scale-color($header-font-color, $lightness: 35%);
+$blockquote-font-color: lighten($header-font-color, 35%);
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -44,7 +46,7 @@ $hamburger-space: 0.625rem;
 $hamburger-border-width: 1px;
 
 $paragraph-margin-bottom: 1.25rem;
-$paragraph-line-height: 1.6;
+$paragraph-line-height: 1.8;
 
 $list-margin-bottom: $paragraph-margin-bottom;
 
@@ -91,6 +93,18 @@ p {
 blockquote {
   color: $blockquote-font-color;
   font-size: $primary-font-size;
+  position: relative;
+  margin: 0.25rem 0 0.25rem 1rem;
+  padding: 0.25rem 2.5rem;
+  &:before {
+    display: block;
+    content: "\201C";
+    font-size: 5rem;
+    position: absolute;
+    left: 0;
+    top: -1.25rem;
+    color: lighten($blockquote-font-color, 25%);
+  }
 }
 
 code {
@@ -104,7 +118,7 @@ hr {
 
 .site-title {
  font-size: $h1-font-size * 0.75;
- font-family: $font-family-serif;
+ font-family: $font-family-sans-serif;
 }
 
 .icon {
@@ -147,13 +161,12 @@ a:hover {
 
 .more-link {
   text-align: right;
-  font-size: $secondary-font-size;
   margin: 0;
 }
 
 .content-wrapper {
   padding-top: $column-gutter / 2;
-  font-size: 1.1rem;
+  //font-size: 1.1rem;
 }
 
 .social-media-list {
@@ -180,6 +193,7 @@ a:hover {
     margin: 0;
     list-style: none;
     li {
+      font-family: $header-font-family;
       display: inline-block;
       &:not(:first-child) {
         margin-left: $column-gutter / 2
@@ -213,6 +227,8 @@ a:hover {
   margin-bottom: $column-gutter;
   a {
     color: $primary-text-color;
+    font-family: $header-font-family;
+    text-transform: uppercase;
     &:hover {
       color: lighten($primary-text-color, 20%);
     }
@@ -330,6 +346,10 @@ pre {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     letter-spacing: normal;
+  }
+  [class*="pure-u"] {
+    font-family: $font-family-serif;
+    font-size: 1.125rem;
   }
 }
 

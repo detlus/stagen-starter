@@ -42,11 +42,11 @@ code > span.er {
  * Generic styles.
  */
 body {
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-family: Georgia, serif;
   font-size: 1rem; }
 
 h1, h2, h3, h5, h5, h6 {
-  font-family: "Roboto Slab", Georgia, Cambria, "Times New Roman", Times, serif;
+  font-family: "Varela Round", arial, sans-serif;
   font-weight: normal; }
 
 h1 {
@@ -72,12 +72,23 @@ a {
   text-decoration: none; }
 
 p {
-  line-height: 1.6;
+  line-height: 1.8;
   margin-bottom: 1.25rem; }
 
 blockquote {
-  color: #6f6f6f;
-  font-size: 1.2rem; }
+  color: #7b7b7b;
+  font-size: 1.2rem;
+  position: relative;
+  margin: 0.25rem 0 0.25rem 1rem;
+  padding: 0.25rem 2.5rem; }
+  blockquote:before {
+    display: block;
+    content: "\201C";
+    font-size: 5rem;
+    position: absolute;
+    left: 0;
+    top: -1.25rem;
+    color: #bbbbbb; }
 
 code {
   color: #333; }
@@ -88,7 +99,7 @@ hr {
 
 .site-title {
   font-size: 1.875rem;
-  font-family: "Roboto Slab", Georgia, Cambria, "Times New Roman", Times, serif; }
+  font-family: "Varela Round", arial, sans-serif; }
 
 .icon > svg {
   display: inline-block;
@@ -114,12 +125,10 @@ a:hover .icon > svg path {
 
 .more-link {
   text-align: right;
-  font-size: 0.9rem;
   margin: 0; }
 
 .content-wrapper {
-  padding-top: 0.9375rem;
-  font-size: 1.1rem; }
+  padding-top: 0.9375rem; }
 
 .social-media-list ul {
   list-style: none;
@@ -137,6 +146,7 @@ a:hover .icon > svg path {
   margin: 0;
   list-style: none; }
   .footer-menu ul li, .footer-menu ol li {
+    font-family: "Varela Round", arial, sans-serif;
     display: inline-block; }
     .footer-menu ul li:not(:first-child), .footer-menu ol li:not(:first-child) {
       margin-left: 0.9375rem; }
@@ -159,7 +169,9 @@ a:hover .icon > svg path {
   padding: 1.875rem 0;
   margin-bottom: 1.875rem; }
   .header-wrapper a {
-    color: #222; }
+    color: #222;
+    font-family: "Varela Round", arial, sans-serif;
+    text-transform: uppercase; }
     .header-wrapper a:hover {
       color: #555555; }
 
@@ -247,6 +259,9 @@ pre {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     letter-spacing: normal; }
+  .pure-g [class*="pure-u"] {
+    font-family: Georgia, serif;
+    font-size: 1.125rem; }
 
 .show-for-sr {
   clip: rect(1px, 1px, 1px, 1px);
