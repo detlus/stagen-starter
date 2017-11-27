@@ -154,14 +154,14 @@ a:hover .icon > svg path {
   background-color: white; }
 
 .header-wrapper {
-  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjNDAzYzNmIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDBMOCA4Wk04IDBMMCA4WiIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2U9IiMxZTI5MmQiPjwvcGF0aD4KPC9zdmc+");
+  background-color: #f4f4f4;
   border-bottom: 1px solid #e7e7e7;
   padding: 1.875rem 0;
   margin-bottom: 1.875rem; }
   .header-wrapper a {
-    color: #c8c8c8; }
+    color: #222; }
     .header-wrapper a:hover {
-      color: #e1e1e1; }
+      color: #555555; }
 
 .footer-wrapper {
   margin: 1.875rem 0;

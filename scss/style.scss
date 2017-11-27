@@ -207,14 +207,14 @@ a:hover {
 }
 
 .header-wrapper {
-  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjNDAzYzNmIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDBMOCA4Wk04IDBMMCA4WiIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2U9IiMxZTI5MmQiPjwvcGF0aD4KPC9zdmc+");
+  background-color: $secondary-background-color;
   border-bottom: 1px solid $secondary-color;
   padding: $column-gutter 0;
   margin-bottom: $column-gutter;
   a {
-    color: lighten($secondary-text-color, 50%);
+    color: $primary-text-color;
     &:hover {
-      color: lighten($secondary-text-color, 60%);
+      color: lighten($primary-text-color, 20%);
     }
   }
 }
