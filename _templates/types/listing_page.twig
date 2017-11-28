@@ -12,17 +12,17 @@
 {% if pagination.count %}
 <ul class="pagination" role="menubar" aria-label="Pagination">
   {% if pagination.current_page > 0 %}
-  <li class="arrow"><a href="{{ site.baseurl ~ pagination.pages[pagination.current_page - 1] }}" aria-label="Previous page">&laquo; Previous</a></li>
+  <li class="arrow"><a class="previous" href="{{ site.baseurl ~ pagination.pages[pagination.current_page - 1] }}" aria-label="Previous page">&laquo; Previous</a></li>
   {% endif %}
   {% for page in pagination.pages %}
     {% if pagination.current_page == loop.index0 %}
       <li class="current"><a><span class="show-for-sr">You're on page </span>{{ loop.index }}</a></li>
     {% else %}
-      <li><a href="{{ site.baseurl ~  page }}" aria-label="Page {{ loop.index }}">{{ loop.index }}</a></li>
+      <li><a class="page-link" href="{{ site.baseurl ~  page }}" aria-label="Page {{ loop.index }}">{{ loop.index }}</a></li>
     {% endif %}
   {% endfor %}
   {% if pagination.current_page < pagination.count - 1 %}
-  <li class="arrow"><a href="{{ site.baseurl ~ pagination.pages[pagination.current_page + 1] }}" aria-label="Next page">Next &raquo;</a></li>
+  <li class="arrow"><a class="next" href="{{ site.baseurl ~ pagination.pages[pagination.current_page + 1] }}" aria-label="Next page">Next &raquo;</a></li>
   {% endif %}
 </ul>
 {% endif %}
