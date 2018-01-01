@@ -132,6 +132,12 @@ hr {
   border-width: 1px 0 0;
 }
 
+figure {
+  img {
+    max-width: 100%;
+  }
+}
+
 .site-title {
  font-size: $h1-font-size * 0.75;
  font-family: $font-family-sans-serif;
